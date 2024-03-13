@@ -21,6 +21,7 @@ CREATE TABLE book (
     author VARCHAR2(100) NOT NULL,
     CONSTRAINT book_pk PRIMARY KEY (id)
 );
+
  -isbn:код книги по международнмоу стандарту
  -name:название книги
  -genre:жанр книги
