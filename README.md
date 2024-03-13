@@ -45,7 +45,7 @@ ALTER TABLE AccountingOfBooks
 
 ПЕРВЫЙ СЕРВИС
 
-2. Регистрация http://localhost:8080/auth/registration
+2 Регистрация http://localhost:8080/auth/registration
 
 Post-запрос:
 {"username":"…", "password":"…”}.
