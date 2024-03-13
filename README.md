@@ -21,7 +21,11 @@ CREATE TABLE book (
     author VARCHAR2(100) NOT NULL,
     CONSTRAINT book_pk PRIMARY KEY (id)
 );
-
+ -isbn:код книги по международнмоу стандарту
+ -name:название книги
+ -genre:жанр книги
+ -description: описание книги
+ -author: автор книги
 Таблица accountingOfBooks (Учет свободных книг):
 
 CREATE TABLE AccountingOfBooks
@@ -35,6 +39,8 @@ ALTER TABLE AccountingOfBooks
             REFERENCES book (id)
             ON DELETE CASCADE;
 
+    - date_taken: время когда книга была взята
+    - date_return: время когда книга была возвращенна 
 
 ПЕРВЫЙ СЕРВИС
 
@@ -57,11 +63,14 @@ For example {"username":"user", "password":"12345”}.
 Для выполнения запросов, нужно сначала зарегистрироваться, чтобы получить JWT токен, после добавлять в header: key – Authorization и value – Bearer {JWT  токен} после чего можно выполнять запросы:
 
 4.1 Getting a list of all books (GET) - http://localhost:8080/books/findAll
+
 4.2 Receiving a book by id (GET) - http://localhost:8080/books/findById/{id}
+
 4.3 Deleting a book by id (POST) - http://localhost:8080/books/deleteById/{id}
 На втором сервисе происходит автоматическое удаление книги.
 
 4.4 Receiving a book by Isbn (POST) - http://localhost:8080/books/findByIsbn/{isbn}
+Получение книги по полю Isbn
 4.5 Creating books and sending id books to a second server (service) (POST) http://localhost:8080/books/createBook
 {
     "isbn":…,
@@ -70,6 +79,7 @@ For example {"username":"user", "password":"12345”}.
     "description":"…",
     "author":"…"
 }
+
 При создании книги, отправляется на второй сервер (сервис) Id, только что созданной книги.
 
 4.6 Updating a book by id (POST) - http://localhost:8080/books/updateBook/{id}
