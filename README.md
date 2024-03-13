@@ -22,11 +22,11 @@ CREATE TABLE book (
     CONSTRAINT book_pk PRIMARY KEY (id)
 );
 
- -isbn:код книги по международнмоу стандарту
- -name:название книги
- -genre:жанр книги
- -description: описание книги
- -author: автор книги
+     -isbn:код книги по международнмоу стандарту
+     -name:название книги
+     -genre:жанр книги
+     -description: описание книги
+     -author: автор книги
 Таблица accountingOfBooks (Учет свободных книг):
 
 CREATE TABLE AccountingOfBooks
