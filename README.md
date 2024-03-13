@@ -106,17 +106,17 @@ For example {"username":"user", "password":"12345”}.
 
 ВТОРОЙ СЕРВИС
 
-1.Создание книги учета (POST) http://localhost:8081/freeBook/createAccountingOfBooks
+1 Создание книги учета (POST) http://localhost:8081/freeBook/createAccountingOfBooks
 
 На данный запрос посылается bookId при выполнении запроса http://localhost:8081/books/createBook на основном (первом) сервисе.
 По умолчанию книга учета имеет bookId и два NULL(пустых) поля (data_taken и data_return), представляющие время взятия книги и время возвращения. Данные характеристики книги указывают на то, что книга есть, и она свободна.
 
-2. Изменение статуса книги (POST) http://localhost:8081/freeBook/updateStatusBook
+2 Изменение статуса книги (POST) http://localhost:8081/freeBook/updateStatusBook
 
 На данный запрос посылается bookId, время взятия и время возвращения при выполнении запроса http://localhost:8081/books/takeBook/{id} на основном (первом) сервисе.
 Определенная книга изменяет свой статус на “занята”, присваивается время взятия и время возвращения.
 
-3.Обнуление статуса книги (POST) http://localhost:8081/freeBook/resetTimeBook
+3 Обнуление статуса книги (POST) http://localhost:8081/freeBook/resetTimeBook
 
 На данный запрос посылается bookId, при выполнении запроса http://localhost:8081/books/ returnBook/{id}} на основном (первом) сервисе.
 Книга учета становится по умолчанию, книга становится свободной.
