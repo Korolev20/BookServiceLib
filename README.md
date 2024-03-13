@@ -39,7 +39,8 @@ ALTER TABLE AccountingOfBooks
         FOREIGN KEY (book_id)
             REFERENCES book (id)
             ON DELETE CASCADE;
-
+            
+    - book_id: id книги таблицы book
     - date_taken: время когда книга была взята
     - date_return: время когда книга была возвращенна 
 
